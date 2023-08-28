@@ -38,5 +38,12 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+typedef void (*instruct_func)(stack_t **stack, unsigned int line_number);
+char *tokenize(char *line);
+void _pint(stack_t **stack, unsigned int line_number);
+instruct_func get_func(char *code);
+void read_file(char *filename, stack_t **stack);
+void free_list(stack_t *head);
+
 
 #endif
